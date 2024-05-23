@@ -1,0 +1,199 @@
+@media (max-width: 1700px) {
+}
+
+@media (max-width: 1500px) {
+  .title {
+    font-size: 60px;
+  }
+
+  .instructions__item-number::before {
+    width: 240px;
+  }
+
+  .instructions__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 1310px) { 
+  .closer__block {
+    flex-direction: column;
+    gap: 35px;
+  }
+  
+  .closer__img {
+    text-align: center;
+  }
+
+  .closer__img img {
+    width: 100%;
+
+  }
+}
+
+@media (max-width: 1100px) {
+  .services__content-item {
+    flex-direction: column;
+  }
+
+  .services__content-item:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+
+  .guarantee__block {
+    flex-direction: column;
+  }
+
+  .connection__block {
+    flex-direction: column;
+  }
+
+  .guarantee__img img {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .instructions__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1250px) {
+  .menu__item {
+  font-size: 17px;
+  }
+}
+
+@media (max-width: 990px) {
+  header {
+    justify-content: space-between;
+  }
+
+  .header__menu-items {
+    width: 100%;
+    background-color: var(--bg);
+    flex-direction: column;
+    gap: 40px;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    padding: 60px 0;
+    top: -200%;
+  }
+
+  .header__menu-items.menu--open {
+    top: 76px;
+  }
+
+  .menu__item {
+    font-size: 18px;
+  }
+
+  .menu__btn {
+    display: flex;
+  }
+
+  .banner__block {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+
+  .aboutus__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .card__title {
+    font-size: 26px;
+  }
+
+  .card__text {
+    font-size: 18px;
+  }
+  summary {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner__block {
+    height: 617px;
+    padding: 0 27px 0 31px;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .banner__text {
+    padding-bottom: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+    width: 60%;
+    padding: 14px 0;
+  }
+
+  .card__text {
+    font-size: 14px;
+  }
+
+  .content__item-title {
+    font-size: 32px;
+  }
+
+  .content__item-text, .community__text, .closer__content-text {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  summary {
+    font-size: 20px;
+  }
+
+  details[open] summary {
+    font-size: 20px;
+  }
+
+  details[open] div {
+    font-size: 14px;
+    padding: 32px;
+  }
+
+  .footer__link a {
+    font-size: 12px;
+  }
+
+  .footer__menu-item {
+    font-size: 12px;
+  }
+
+  .instructions__content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .instructions__content-mb {
+    display: grid;
+  }
+
+  .instructions__content-pk {
+    display: none;
+  }
+
+  summary:after{
+    padding: 13px 18px;
+  }
+}
