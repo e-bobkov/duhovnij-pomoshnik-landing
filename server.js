@@ -5,9 +5,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5557;
 
-app.use(bodyParser.urlencoded({extended: false}));
+// Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
+// Connect to SQLite database
 const db = new sqlite3.Database('../bot.db', err => {
     if (err) {
         console.error('Failed to open database:', err);
@@ -21,17 +24,18 @@ const db = new sqlite3.Database('../bot.db', err => {
     console.log('Connected to the SQLite database.');
 });
 
-db.run(`CREATE TABLE IF NOT EXISTS faq
-        (
-            id      INTEGER PRIMARY KEY AUTOINCREMENT,
-            name    TEXT,
-            email   TEXT,
-            phone   TEXT,
-            message TEXT
-        )`);
+// Create FAQ table if not exists
+db.run(`CREATE TABLE IF NOT EXISTS faq (
+    id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    name    TEXT,
+    email   TEXT,
+    phone   TEXT,
+    message TEXT
+)`);
 
+// Routes
 app.post('/faq', (req, res) => {
-    const {name, email, phone, comment} = req.body;
+    const { name, email, phone, comment } = req.body;
     console.log(name, email, phone, comment);
     db.run('INSERT INTO faq (name, email, phone, message) VALUES (?, ?, ?, ?)',
         [name, email, phone, comment],
@@ -47,8 +51,7 @@ app.post('/faq', (req, res) => {
     );
 });
 
-app.use(express.static('public'));
-
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
